@@ -3,28 +3,22 @@ const { ethers } = require("hardhat");
 async function main() {
   const [deployer] = await ethers.getSigners();
 
-  //   console.log("Deploying contracts with the account:", deployer.address);
-  //   console.log("Account balance:", (await deployer.getBalance()).toString());
+  console.log("Deploying contracts with the account:", deployer.address);
+  console.log("Account balance:", (await deployer.getBalance()).toString());
 
   // deploy contracts here:
-  //   const myContractFactory = await ethers.getContractFactory(
-  //     "MyContract"
-  //   );
-  //   const myContract = await MyContractFactory.deploy(
-  //     arg1,
-  //     arg2,
-  //     { value: someValue }
-  //   );
+  const stephenResumeFactory = await ethers.getContractFactory("StephenResume");
+  const stephenResume = await stephenResumeFactory.deploy();
 
-  //   console.log("Smart contract address:", myContract.address);
+  console.log("Smart contract address:", stephenResume.address);
 
   // For each contract, pass the deployed contract and name to this function to save a copy of the contract ABI and address to the front end.
-  //   saveFrontendFiles(myContract, "MyContract");
+  saveFrontendFiles(stephenResume, "StephenResume");
 }
 
 function saveFrontendFiles(contract, name) {
   const fs = require("fs");
-  const contractsDir = __dirname + "/../../frontend/contractsData";
+  const contractsDir = __dirname + "/../../frontend/contracts";
 
   if (!fs.existsSync(contractsDir)) {
     fs.mkdirSync(contractsDir);
