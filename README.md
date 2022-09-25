@@ -6,7 +6,7 @@ The mint price is 0.05 ETH, feel free to mint as many as you want so that I can 
 
 ## Opensea
 
-https://testnets.opensea.io/collection/stephen-resume
+https://testnets.opensea.io/collection/stephen-resume (Outdated)
 
 ## Etherscan
 
